@@ -1,0 +1,71 @@
+﻿1. class Car {
+  constructor(name) {
+this.name;
+   }
+    getDetail() {
+        console.log(‘nama mobil: ’ + this.name);
+   }
+}
+
+
+var car = new Car(‘avanza’);
+car.getDetail() //it will be nama mobil: avanza
+
+
+this keyword means it can be accessed global in a class
+New keyword means we create new object and we can call function
+   2. In my opinion, new class syntax is a template to create an object and we can access the object inside class. How to create instance class method, its refers the answer no 1, in the var car = new Car(‘avanza’), variable car is instance class method.
+   3. class Bank() {
+   constructor(name, nameAccount) {
+      this.name = name;
+      this.nameAccount = nameAccount;
+   }
+
+
+    getDetail() {
+       console.log(‘nama bank: ’ + this.name + ‘ nama account:  ’ + this.nameAccount);
+    }
+}
+
+
+class BankAccount extends Bank() {
+    constructor(name, nameAccount) {
+       super(name, nameAccount);
+   }
+
+
+   getAmount() {
+       console.log(‘jumlah tabungan 1000000’);
+   }
+   
+} 
+
+
+var bankAccount = new BankAccount(‘BCA’, ‘nana’);
+bankAccount.getDetail();
+bankAccount.getAmount();
+
+
+   4. Refactoring from es5 application to es2015, first thing first i would to check the variable is there any variable using var, if there is variable still using var, i will change to let. And then, maybe i would go change using classes or functional using import and export. 
+   5. Because module pattern code basic is like this:
+(function () {
+    // declare private variable or function
+   return (
+        // declare  public variable or function
+    )
+})();
+so i will go with one folder and the contents of that folder is several file is using module pattern, and in another folder we can use import / require to call that.
+   6. Preferred ways to testing web applications is if that using API if the team not implementing testing like using jest, mocha, etc, i will go using postman or insomnia client
+   7. web server i use is for now using apache. pros: i think its suite to beginner when using first time linux or mac. Cons: i think in apache there is no load balancer like in nginx
+   8. Preferred production development process i think if in team still not using ci / cd, i will go make several branch like master, pre-production, staging, development. So if we want to up production, we must try it in pre production before to master. If in pre production there is no problem, so we can merge to master
+   9. an example of clean README.md documentation
+# REACT AJAIB TEST <- title in the project
+## stack <- third party of we use in the project
+- react
+- react table
+
+
+## how to run <- list how to run project if someone want to using our project
+- git clone
+- yarn install
+- yarn start
